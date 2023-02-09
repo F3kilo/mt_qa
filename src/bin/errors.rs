@@ -2,7 +2,7 @@ use std::error::Error;
 use std::net::TcpStream;
 use std::sync::mpsc;
 
-use tracing::{trace, Level};
+use tracing::{warn, Level};
 use tracing_subscriber::FmtSubscriber;
 
 fn main() {
@@ -20,5 +20,5 @@ fn main() {
 }
 
 fn log_error(e: &impl Error) {
-    trace!("Error happened: {e}")
+    warn!("Error happened: {e}")
 }
